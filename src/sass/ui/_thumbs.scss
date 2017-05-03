@@ -1,0 +1,23 @@
+.thumbs {
+  background-color: $dark-gray;
+  padding: 36px 0;
+}
+
+.thumb {
+ display: block;
+ padding-bottom: 12px;
+}
+
+.thumb-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border: 1px solid $primary-color;
+}
+
+.thumb-title {
+  color: $primary-color;
+  font-size: 18px;
+  padding-top: 12px;
+  margin-top: 0;
+}

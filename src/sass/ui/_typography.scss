@@ -1,0 +1,19 @@
+p {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.65;
+  padding: 12px 0;
+}
+
+blockquote {
+  position: relative;
+  color: $white;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.65;
+  background-color: $primary-color;
+  border: none;
+  padding: 36px;
+  margin-bottom: 22px;
+}
