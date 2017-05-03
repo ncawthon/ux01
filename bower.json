@@ -1,0 +1,24 @@
+{
+  "name": "ux01",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "@cdunnnnnnn"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ncawthon/ux01",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.7"
+  },
+  "devDependencies": {
+    "bootstrap-social": "^5.1.1"
+  }
+}
