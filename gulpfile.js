@@ -4,6 +4,7 @@ var gulp = require('gulp'),
   sass = require('gulp-sass'),
   autoprefix = require('gulp-autoprefixer'),
   uglify = require('gulp-uglifyjs'),
+  htmlmin = require('gulp-htmlmin'),
   notify = require('gulp-notify'),
   browserSync = require('browser-sync').create()
 ;
@@ -30,7 +31,10 @@ gulp.task('img', function () {
 });
 
 gulp.task('css', function () {
-  return gulp.src(config.srcDir + '/sass/app.scss')
+  return gulp.src([
+      config.bowerDir + '/featherlight/src/featherlight.css',
+      config.srcDir + '/sass/app.scss'
+    ])
     .pipe(sass({
       outputStyle: 'compressed',
       includePaths: [config.bowerDir + '/bootstrap-sass/assets/stylesheets'],
@@ -45,8 +49,12 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
   return gulp.src([
-    config.bowerDir + '/jquery/dist/jquery.min.js',
+    config.bowerDir + '/jquery/dist/jquery.js',
     config.bowerDir + '/bootstrap-sass/assets/javascripts/bootstrap.js',
+    config.bowerDir + '/jquery-sticky/jquery.sticky.js',
+    config.bowerDir + '/featherlight/src/featherlight.js',
+    config.bowerDir + '/Tabslet/jquery.tabslet.js',
+    config.bowerDir + '/vimeo-player-js/dist/player.js',
     config.srcDir + '/js/*.js'
   ])
   .pipe(uglify('app.js', {
@@ -60,6 +68,11 @@ gulp.task('js-watch', ['js'], browserSync.reload);
 
 gulp.task('html', function () {
   gulp.src(config.srcDir + '/*.html')
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      minifyCSS: true,
+      minifyJS: true
+    }))
     .pipe(gulp.dest(config.distDir));
 });
 
