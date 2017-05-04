@@ -46,21 +46,15 @@ jQuery(document).ready(function ($) {
         function toSeconds(str) {
           var
             parts = str.split(':'),
-            minutes = parts[0]
-            seconds = parts[1]
-            seconds = parseInt(seconds, 10) + (parseInt(minutes, 10) * 60);
+            minutes = parts[0],
+            seconds = parts[1],
+            seconds = parseInt(seconds, 10) + (parseInt(minutes, 10) * 60)
           ;
 
           return seconds;
         }
 
         var jumpToSeconds = toSeconds(jumpTo);
-
-        // alert(jumpToSeconds);
-
-        $(this).css({
-          'cursor': 'pointer'
-        });
 
         $(this).on('touchstart click', function (e) {
           e.preventDefault();
@@ -72,7 +66,7 @@ jQuery(document).ready(function ($) {
               // an error occured
             });
 
-          player.setCurrentTime(jumpTo)
+          player.setCurrentTime(jumpToSeconds)
             .then(function (seconds) {
               console.log('setCurrentTime: ' + seconds);
             }).catch(function (error) {
@@ -85,6 +79,23 @@ jQuery(document).ready(function ($) {
                 break;
               }
             });
+
+            player.play()
+              .then(function () {
+                // the video was played
+              }).catch(function (error) {
+                switch (error.name) {
+                  case 'PasswordError':
+                    // the video is password-protected
+                    break;
+                  case 'PrivacyError':
+                    // the video is private
+                    break;
+                  default:
+                    // somr other error occured
+                    break;
+                }
+              })
         });
       });
     }
