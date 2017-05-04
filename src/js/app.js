@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
     });
 
     // tabs
-    $('.tabs-lang a').click(function (e) {
+    $('.tabs-lang a').on('touchstart click', function (e) {
       e.preventDefault();
 
       $(this).parent().addClass('active');
@@ -62,7 +62,7 @@ jQuery(document).ready(function ($) {
           'cursor': 'pointer'
         });
 
-        $(this).click(function (e) {
+        $(this).on('touchstart click', function (e) {
           e.preventDefault();
 
           player.getDuration()
