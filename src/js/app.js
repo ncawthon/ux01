@@ -7,7 +7,25 @@ jQuery(document).ready(function ($) {
 
     // sticky player
     $('#player').sticky({
-      stickyClass: 'sticky'
+      stickyClass: 'sticky',
+      responsiveWidth: true,
+      zIndex: 9999
+    });
+    $('#player').on('sticky-start', function() {
+      $(this)
+        .find('iframe')
+        .animate({
+          height: 250
+        }, 200)
+      ;
+    });
+    $('#player').on('sticky-end', function() {
+      $(this)
+        .find('iframe')
+        .animate({
+          height: 500
+        }, 200)
+      ;
     });
 
     // tabs
@@ -32,7 +50,25 @@ jQuery(document).ready(function ($) {
       url = encodeURIComponent(url);
       var tweet = 'https://twitter.com/intent/tweet?text=' + text + '&via=' + handle + '&url=' + url;
 
-      $(this).find('a[data-class-tweet]').attr('href', tweet).attr('target', '_blank');
+      $(this).on('touchstart click', function(e) {
+        var
+          w = 575,
+          h = 400,
+          top = ($(window).height() - h) / 2,
+          left = ($(window).width() - w) / 2,
+          opts =
+            'status=1' +
+            ',width=' + w +
+            ',height=' + h +
+            ',top=' + top +
+            'left=' + left
+        ;
+
+        window.open(tweet, 'twitter', opts);
+
+        return false;
+      });
+
     });
 
     // vimeo api
