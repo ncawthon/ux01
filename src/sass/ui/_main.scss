@@ -1,9 +1,18 @@
 .main {
-
+  background: $light-gray;
 }
 
 .main-nav {
   padding: 24px 0;
+}
+
+.logo {
+  margin-left:-30px;
+  margin-top:10px;
+}
+
+.tab-content {
+  background: #fff;
 }
 
 .tabs-lang {
