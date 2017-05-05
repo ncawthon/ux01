@@ -1,0 +1,17 @@
+.wrapper {
+  position: relative;
+}
+
+a {
+  color: $primary-color;
+  &.color-white {
+    color: $white;
+  }
+  &.color-black {
+    color: $black;
+  }
+  &:hover, &:focus {
+    color: $primary-color;
+    text-decoration: none;
+  }
+}

@@ -19,6 +19,10 @@
     "bootstrap-sass": "^3.3.7"
   },
   "devDependencies": {
-    "bootstrap-social": "^5.1.1"
+    "bootstrap-social": "^5.1.1",
+    "jquery-sticky": "^1.0.4",
+    "featherlight": "^1.7.2",
+    "Tabslet": "^1.7.3",
+    "vimeo-player-js": "^2.0.1"
   }
 }

@@ -52,6 +52,9 @@
   height: 48px;
   color: $black;
   background-color: $white;
+  .icon {
+
+  }
   &:before {
     content: "";
     position: absolute;
@@ -60,6 +63,18 @@
     width: 0;
     border-top: 48px solid $white;
     border-left: 48px solid $primary-color;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("https://image.flaticon.com/icons/svg/8/8800.svg") no-repeat center center;
+    background-size: 100%;
+    // transform: translate(-50%, -50%);
   }
 }
 
