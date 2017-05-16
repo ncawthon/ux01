@@ -6,7 +6,7 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglifyjs'),
   htmlmin = require('gulp-htmlmin'),
   notify = require('gulp-notify'),
-  deploy = require('gulp-gh-pages'),  
+  deploy = require('gulp-gh-pages'),
   browserSync = require('browser-sync').create()
 ;
 var config = {
