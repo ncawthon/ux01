@@ -17,3 +17,23 @@ blockquote {
   padding: 36px;
   margin-bottom: 22px;
 }
+
+
+.parts-list {
+  list-style: none;
+  font-size: 22px;
+  font-weight: lighter;;
+  line-height: 40px;
+  margin-left:0px;
+  padding-left:0px;
+
+  li {
+    margin-left:0px;
+    padding-left:0px;
+
+  }
+}
+
+.tab-content .container {
+  font-size: 97.5%;
+}
