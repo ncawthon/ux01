@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglifyjs'),
   htmlmin = require('gulp-htmlmin'),
   notify = require('gulp-notify'),
+  deploy = require('gulp-gh-pages'),
   browserSync = require('browser-sync').create()
 ;
 var config = {
@@ -88,3 +89,11 @@ gulp.task('serve', ['css'], function () {
 });
 
 gulp.task('default', ['fonts', 'img', 'css', 'js', 'html', 'serve']);
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
+});
