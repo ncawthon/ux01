@@ -94,6 +94,6 @@ gulp.task('default', ['fonts', 'img', 'css', 'js', 'html', 'serve']);
  * Push build to gh-pages
  */
 gulp.task('deploy', function () {
-  return gulp.src("./dist/**/*")
+  return gulp.src("./src/**/*")
     .pipe(deploy())
 });
